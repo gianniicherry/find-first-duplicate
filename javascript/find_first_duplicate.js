@@ -1,5 +1,15 @@
 function findFirstDuplicate(arr) {
   // type your code here
+  const seen = new Set();
+
+  for (const item of arr) {
+    if (seen.has(item)) {
+      return item; // Found a duplicate
+    }
+    seen.add(item);
+  }
+
+  return -1; // No duplicates found
 }
 
 if (require.main === module) {
